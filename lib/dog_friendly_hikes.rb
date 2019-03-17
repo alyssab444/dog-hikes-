@@ -4,3 +4,4 @@ require "pry"
 
 require_relative "./dog_hikes/version"
 require_relative "./dog_hikes/cli" 
+require_relative "./dog_hikes/hikes"

@@ -5,7 +5,7 @@ class DogHikes::CLI
     puts "Dog Friendly Hikes:"
    
   end  
-  class DogHikes::CLI 
+ 
   
   def call 
     puts "Looking to take your pup on an adventure?"
