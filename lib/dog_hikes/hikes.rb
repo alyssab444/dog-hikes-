@@ -1,5 +1,5 @@
 
-class DogHikes::Hikes 
+class DogFriendlyHikes::Hikes 
 
 attr_accessor :name, :location, :distance 
   @@all = []

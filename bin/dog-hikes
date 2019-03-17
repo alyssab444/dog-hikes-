@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
 
-require "./lib/dog_hikes"
-DogHikes::CLI.new.call   
+require "./lib/dog_friendly_hikes.rb"
+DogFriendlyHikes::CLI.new.call   

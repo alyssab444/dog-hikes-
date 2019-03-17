@@ -1,10 +1,10 @@
 #CLI controller
 
-class DogHikes::CLI
+class DogFriendlyHikes::CLI
  
  def call 
     puts "Looking to take your pup on an adventure?"
-    DogHikes::Hikes.scrape_hikes
+    DogFriendlyHikes::Hikes.scrape_hikes
     list_hikes
     menu
     goodbye 
@@ -12,7 +12,7 @@ class DogHikes::CLI
   
   def list_hikes
     puts "Dog Friendly Hikes:"
-    DogHikes::Hikes.each_with_index(1) do |hike, i|
+    DogFriendlyHikes::Hikes.each_with_index(1) do |hike, i|
       puts "#{i}. #{hike.name} - #{hike.location} - #{hike.distance}"
     end 
   end 
@@ -24,7 +24,7 @@ class DogHikes::CLI
       input = gets.strip.downcase  
       
       if input.to_i > 0 
-        the_hike = DogHikes::Hikes[input.to_i-1]
+        the_hike = DogFriendlyHikes::Hikes[input.to_i-1]
         puts "#{the_hike.name} - #{the_hike.location} - #{the_hike.distance}"
       elsif input == "list"
        list_hikes 
