@@ -30,7 +30,7 @@ attr_accessor :name, :location, :distance
    name = doc.css("h1.post entry-title").text 
    location = doc.css("td.snapshotdetail").text 
    distance = doc.css("td.snapshotdetail").text
-   hike_one = self.new(name, location, distance)    binding.pry
+   hike_one = self.new(name, location, distance)    
   end 
   
   def self.scrape_hike_two

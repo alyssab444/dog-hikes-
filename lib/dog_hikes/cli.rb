@@ -1,28 +1,22 @@
 #CLI controller
 
-class DogHikes::CLI 
-  def call 
-    puts "Dog Friendly Hikes:"
-   
-  end  
+class DogHikes::CLI
  
-  
-  def call 
+ def call 
     puts "Looking to take your pup on an adventure?"
+    DogHikes::Hikes.scrape_hikes
     list_hikes
     menu
     goodbye 
-   
-  end  
+ end  
+  
   def list_hikes
     puts "Dog Friendly Hikes:"
-    1.Bear Canyone Loop Trail -Boulder,Colorado-3.5 miles hike distance 
-    2. Elk Meadow Park - Evergreen, Colorado - 2.6 miles hike distance 
-    @hike = DogHikes::Hikes.hike 
-    @hike.each_with_index(1) do |hike, i|
+    DogHikes::Hikes.each_with_index(1) do |hike, i|
       puts "#{i}. #{hike.name} - #{hike.location} - #{hike.distance}"
     end 
   end 
+  
   def menu
     input = nil 
     while input != "exit"
@@ -30,7 +24,7 @@ class DogHikes::CLI
       input = gets.strip.downcase  
       
       if input.to_i > 0 
-        the_hike = @hikes[input.to_i-1]
+        the_hike = DogHikes::Hikes[input.to_i-1]
         puts "#{the_hike.name} - #{the_hike.location} - #{the_hike.distance}"
       elsif input == "list"
        list_hikes 
@@ -40,9 +34,7 @@ class DogHikes::CLI
     end 
   end 
     
-    
-  end 
   def goodbye 
-    puts "See you next time for your next hike!"
+    puts "See you later for your next hike!"
   end 
 end 
