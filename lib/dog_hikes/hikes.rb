@@ -26,15 +26,18 @@ attr_accessor :name, :location, :distance
   end 
   
   def self.scrape_hike_one
-   doc = Nokogiri::HTML (open("https://dayhikesneardenver.com/bear-canyon-loop-hike-ncar/"))
-   name = doc.css("h1.post entry-title").text 
+   html = (open("https://dayhikesneardenver.com/bear-canyon-loop-hike-ncar/"))
+    doc = Nokogiri::HTML(html)
+   name = doc.css("h1.post.entry-title a").text 
    location = doc.css("td.snapshotdetail").text 
    distance = doc.css("td.snapshotdetail").text
-   hike_one = self.new(name, location, distance)    
+   hike_one = self.new(name, location, distance) 
+   binding.pry 
   end 
   
   def self.scrape_hike_two
-    doc = Nokogiri::HTML (open("https://dayhikesneardenver.com/elk-meadow-park-south-loop/"))
+    html = L (open("https://dayhikesneardenver.com/elk-meadow-park-south-loop/"))
+    doc = Nokogiri::HTML(html)
     name = doc.css("h1.post entry-title").text 
     location = doc.css("td.snapshotdetail").text 
     distance = doc.css("td.snapshotdetail").text 
