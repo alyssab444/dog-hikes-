@@ -1,7 +1,9 @@
 #CLI controller
+
 class DogHikes::CLI 
   def call 
     puts "Dog Friendly Hikes:"
+   
   end  
   class DogHikes::CLI 
   
@@ -10,6 +12,7 @@ class DogHikes::CLI
     list_hikes
     menu
     goodbye 
+   
   end  
   def list_hikes
     puts "Dog Friendly Hikes:"

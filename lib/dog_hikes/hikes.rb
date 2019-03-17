@@ -1,47 +1,20 @@
-class DogHikes::Hikes 
-
-attr_accessor :name, :location, :distance 
-  @@all = []
-
-  def initialize(name, location, distance)
-    @name = name
-    @location = location 
-    @distance = distance 
-    @@all << self
-  end
-
-  def self.all
-    @@all
-  end
-  
-  def save
-    @@all << self.scrape_info
-  end
-  
-  def self.hike 
-    self.scrape_hikes 
-  end 
-  
-  def self.scrape_hikes
+require 'pry'
+class DogHikes 
+  def self.scrape_info
     hikes = []
-    html = open(https://dayhikesneardenver.com/best-dog-hikes-denver/")
-    doc = Nokogiri::HTML(html)
+    hikes << self.hike_one 
+    hikes << self.hike_two 
+    
   end 
-
-
-
-hike1 = self.new 
-hike1.name = "Bear Canyon Loop Trail" 
-hike1.location = "Boulder, Colorado"
-hike1.distance = "3.5 miles"
-
-hike2 = self.new 
-hike2.name = "Elk Meadow Park" 
-hike2.location = "Evergreen, Colorado" 
-hike2.distance = "2.6 miles" 
-
-[hike 1, hike2]
-
-end 
   
+  def self.scrape_hike
+   doc = Nokogiri::HTML (open("https://dayhikesneardenver.com/bear-canyon-loop-hike-ncar/"))
+    binding.pry 
+  end 
+  
+end 
+
+
+
+
   
