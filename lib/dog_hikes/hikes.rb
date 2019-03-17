@@ -18,11 +18,18 @@ attr_accessor :name, :location, :distance
     @@all << self.scrape_info
   end
   
-  def self.scrape_breakfast
+  def self.hike 
+    self.scrape_hikes 
+  end 
+  
+  def self.scrape_hikes
+    hikes = []
     html = open(https://dayhikesneardenver.com/best-dog-hikes-denver/")
     doc = Nokogiri::HTML(html)
-end 
-end 
+  end 
+
+
+
 hike1 = self.new 
 hike1.name = "Bear Canyon Loop Trail" 
 hike1.location = "Boulder, Colorado"
@@ -34,5 +41,7 @@ hike2.location = "Evergreen, Colorado"
 hike2.distance = "2.6 miles" 
 
 [hike 1, hike2]
+
+end 
   
   
