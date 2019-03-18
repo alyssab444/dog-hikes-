@@ -2,7 +2,6 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dog_friendly_hikes`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -21,8 +20,9 @@ Or install it yourself as:
     $ gem install dog_friendly_hikes
 
 ## Usage
+To start the application, from your terminal type  bin/dog-hikes
 
-TODO: Write usage instructions here
+Enter in the destination of the hike you desire whether that be Bear Canyon Loop Trail or Elk Meadow Park. You will then receive information for your specified hike like location and distance of the hike.
 
 ## Development
 
