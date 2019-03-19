@@ -29,7 +29,7 @@ class DogFriendlyHikes::CLI
       elsif input == "list"
        list_hikes 
         else 
-          puts "Invald entry, type list or exit."
+          puts "Invalid entry, type list or exit."
       end 
     end 
   end 
