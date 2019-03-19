@@ -29,9 +29,12 @@ attr_accessor :name, :location, :distance
    html = (open("https://dayhikesneardenver.com/bear-canyon-loop-hike-ncar/"))
     doc = Nokogiri::HTML(html)
    name = doc.css("h1.post.entry-title a").text 
-   location = doc.css("td.snapshotdetail").text 
-   distance = doc.css("td.snapshotdetail").text
-   hike_one = self.new(name, location, distance) 
+   city = doc.css("td.snapshotdetail").text.split[27]
+   state = doc.css("td.snapshotdetail").text.split[28].scan(/[A-Z][a-z]+/).join(",").split(",")[0]
+   location = city + " " + state
+   miles = doc.css("td.snapshotdetail").text.split[1]
+   distance = "Approx #{miles} Miles"
+   hike_one = self.new(name, location, distance)
    binding.pry 
   end 
   
@@ -39,7 +42,7 @@ attr_accessor :name, :location, :distance
     html = L (open("https://dayhikesneardenver.com/elk-meadow-park-south-loop/"))
     doc = Nokogiri::HTML(html)
     name = doc.css("h1.post entry-title").text 
-    location = doc.css("td.snapshotdetail").text 
+    location = doc.css("td.snapshotdetail").text.split
     distance = doc.css("td.snapshotdetail").text 
     hike_two = self.new(name, location, distance)
   end 
