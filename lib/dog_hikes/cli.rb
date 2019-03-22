@@ -12,15 +12,15 @@ class DogFriendlyHikes::CLI
   
   def list_hikes
     puts "Dog Friendly Hikes:"
-    DogFriendlyHikes::Hikes.each_with_index(1) do |hike, i|
-      puts "#{i}. #{hike.name} - #{hike.location} - #{hike.distance}"
+    DogFriendlyHikes::Hikes.scrape_hikes.each_with_index do |hike, i=1|
+      puts "#{i}. #{hike.name}- #{hike.location} - #{hike.distance}"
     end 
   end 
   
   def menu
     input = nil 
     while input != "exit"
-    puts "Choose the hike you would like to learn more about or type list to see the hike options again or type exit"
+    puts "Choose the hike you would like to learn more about or type exit"
       input = gets.strip.downcase  
       
       if input.to_i > 0 

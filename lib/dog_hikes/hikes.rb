@@ -40,13 +40,14 @@ attr_accessor :name, :location, :distance
   def self.scrape_hike_two
     html =  (open("https://dayhikesneardenver.com/elk-meadow-park-south-loop/"))
     doc = Nokogiri::HTML(html)
-    name = doc.css("h1.post entry-title").text 
-    city = doc.css("td.snapshotdetail").text.split[27]
-   state = doc.css("td.snapshotdetail").text.split[28].scan(/[A-Z][a-z]+/).join(",").split(",")[0]
+    name = doc.css("h1.post.entry-title").text 
+    city = doc.css("td.snapshotdetail").text.split[15]
+   state = doc.css("td.snapshotdetail").text.scan(/[A-Z][a-z]+/).join(",").split(",")[0]
    location = city + " " + state
    miles = doc.css("td.snapshotdetail").text.split[1]
    distance = "Approx #{miles} Miles"
    hike_two = self.new(name, location, distance)
+   binding.pry 
   end 
   
 end 
