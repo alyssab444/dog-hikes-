@@ -25,11 +25,11 @@ class DogFriendlyHikes::CLI
     input = gets.strip.downcase
        if input.to_i > 0
          the_hike = @hikes.scrape_hikes[input.to_i-1]
-          puts "#{the_hike.name} - #{the_hike.location} - #{the_hike.distance}"
-          elsif input == "list"
-           list_hikes
-         else 
-          puts "Invalid entry, type list or exit."
+            puts "#{the_hike.name} - #{the_hike.location} - #{the_hike.distance}"
+        elsif input == "list" 
+            list_hikes 
+        else 
+           puts "Invalid entry, type list to see the hikes or exit."
      end 
     end 
   end 
