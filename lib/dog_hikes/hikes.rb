@@ -47,7 +47,6 @@ attr_accessor :name, :location, :distance
    miles = doc.css("td.snapshotdetail").text.split[0]
    distance = "Approx #{miles} Miles"
    hike_two = self.new(name, location, distance)
-   binding.pry 
   end 
   
 end 
